@@ -3,11 +3,11 @@ const express = require('express');
 const app = express();
 
 
-app.use(express.static(__dirname + '/dist/JDPAutos'));
+app.use(express.static(__dirname + '/dist/deployjdp'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/JDPAutos/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/deployjdp/index.html'));
 });
 
 // default Heroku port
