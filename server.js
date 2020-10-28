@@ -1,13 +1,14 @@
+const path = require('path');
 const express = require('express');
-
 const app = express();
 
-const path = require('path');
 
-app.use(express.static(_dirname + '/dist'));
-app.listen(process.env.PORT || 8080);
+app.use(express.static(__dirname + '/dist/JDPAutos'));
 
+// Send all requests to index.html
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(_dirname + '/dist/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/JDPAutos/index.html'));
 });
-console.log('Console listening!');
+
+// default Heroku port
+app.listen(process.env.PORT || 5000);
